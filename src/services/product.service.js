@@ -13,7 +13,9 @@ module.exports = {
                 initialCost: item['INITIAL COST'],
                 qty: item['QTY'] ? parseInt(item['QTY'].replace(/,/g, '')) : 0,
                 cost: item['COST'] ? parseFloat(item['COST'].replace(/,/g, '')) : 0,
-                amount: (item['QTY'] && item['COST']) ? parseInt(item['QTY'].replace(/,/g, ''))* parseFloat(item['COST'].replace(/,/g, '')) : 0
+                amount: (item['QTY'] && item['COST']) ? parseInt(item['QTY'].replace(/,/g, ''))* parseFloat(item['COST'].replace(/,/g, '')) : 0,
+                totalSold: item['TOTALSOLD'],
+                totalSoldAmount: item['TOTALSOLDAMOUNT']
             })
         })
         return inventory;
