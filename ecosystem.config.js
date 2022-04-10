@@ -9,7 +9,7 @@ module.exports = {
 
   deploy : {
     production : {
-      key: '/Users/rainierpaolopunzalan/Documents/pem/agila.pem',
+      key: '/Users/rpgpunzalan/Documents/pem/agila.pem',
       user : 'ubuntu',
       host : 'agila.rpinnotech.com',
       ref  : 'origin/master',
