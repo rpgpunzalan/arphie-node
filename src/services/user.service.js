@@ -34,5 +34,16 @@ module.exports = {
             })
         })
         return agents;
+    }),
+
+    addUser: (async ({email, password, name, accessLevel}) => {
+        const userRows = await getSheet('USERS');
+        return userRows.addRow({EMAIL: email, PASSWORD: password, NAME: name, "ACCESS LEVEL": accessLevel})
+        .then((data) => {
+            return true
+        })
+        .catch((e) => {
+            return false
+        })
     })
 }

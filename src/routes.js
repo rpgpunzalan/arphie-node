@@ -7,6 +7,7 @@ const { getPurchasesHandler, bulkAddPurchaseHandler, getPurchaseHandler, deleteP
 const { getSalesHandler, getSalesAgentsHandler, addSalesHandler, deleteAndUpdateSaleHandler } = require('./controllers/sales.controller');
 const {createSessionHandler} = require('./controllers/session.controller');
 const { getSuppliersHandler, addSupplierHandler, getSupplierSummaryHandler } = require('./controllers/supplier.service');
+const { addUserHandler } = require('./controllers/user.controller');
 const { addVoucherHandler, getVouchersHandler, addVoucherDecisionHandler } = require('./controllers/voucher.controller');
 
 module.exports = (app) => {
@@ -68,4 +69,6 @@ module.exports = (app) => {
 
     app.get('/api/dashboard-totals', getTotalsHandler);
     app.get('/api/dashboard-graph', getDashboardGraphHandler)
+
+    app.post('/api/register', addUserHandler);
 };
