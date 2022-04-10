@@ -30,7 +30,7 @@ module.exports = {
             customers.push({
                 name: item['NAME'],
                 address: item['ADDRESS'],
-                contactNumber: item['CONTACT NUMoogBER']
+                contactNumber: item['CONTACT NUMBER']
             })
         })
         return _.sortBy(customers, 'name');

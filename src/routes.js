@@ -1,4 +1,5 @@
 const { getCustomerSummaryHandler, getCustomersHandler } = require('./controllers/customer.controller');
+const { getTotalsHandler } = require('./controllers/dashboard.controller');
 const { getExpenseHandler, addExpenseHandler, getCategoriesHandler, deleteExpenseHandler, getExpensesHandler } = require('./controllers/expense.controller');
 const { addPaymentHandler } = require('./controllers/payment.controller');
 const { getInventoryHandler, addProductHandler, stockViewerHandler } = require('./controllers/product.controller');
@@ -63,4 +64,7 @@ module.exports = (app) => {
     app.post('/api/expenses', addExpenseHandler)
     app.get('/api/expense-categories', getCategoriesHandler)
     app.delete('/api/expenses/:expenseNo', deleteExpenseHandler)
+
+
+    app.get('/api/dashboard-totals', getTotalsHandler);
 };
