@@ -1,8 +1,7 @@
 module.exports = {
   apps : [{
     script: 'server.js',
-    watch: '.'
-  }, {
+    watch: false
   }],
 
   deploy : {
