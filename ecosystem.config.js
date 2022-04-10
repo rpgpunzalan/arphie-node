@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    script: 'index.js',
+    script: 'server.js',
     watch: '.'
   }, {
     script: './service-worker/',
@@ -9,14 +9,13 @@ module.exports = {
 
   deploy : {
     production : {
-      user : 'SSH_USERNAME',
-      host : 'SSH_HOSTMACHINE',
+      key: '/Users/rainierpaolopunzalan/Documents/pem/agila.pem',
+      user : 'ubuntu',
+      host : 'agila.rpinnotech.com',
       ref  : 'origin/master',
-      repo : 'GIT_REPOSITORY',
-      path : 'DESTINATION_PATH',
-      'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
-      'pre-setup': ''
+      repo : 'git@github.com:rpgpunzalan/arphie-node.git',
+      path : '/home/ubuntu/arphie-node',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production --name arphie-node',
     }
   }
 };
