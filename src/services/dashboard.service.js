@@ -14,5 +14,18 @@ module.exports = {
             })
         })
         return dashboard[0];
+    },
+
+    getDashboardGraph: async () => {
+        const dashboardRows = await getData('DASHBOARDGRAPH');
+        const dashboard = [];
+        dashboardRows.map(item=>{
+            dashboard.push({
+                sales: item['SALES'],
+                purchases: item['PURCHASES'],
+                expenses: item['EXPENSES'],
+            })
+        })
+        return dashboard;
     }
 }
